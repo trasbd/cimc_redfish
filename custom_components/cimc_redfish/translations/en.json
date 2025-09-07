@@ -1,0 +1,35 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cisco CIMC Redfish",
+        "description": "Enter your CIMC details",
+        "data": {
+          "host": "Host or IP",
+          "username": "Username",
+          "password": "Password",
+          "verify_ssl": "Verify SSL certificate",
+          "tls_min": "Minimum TLS version"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password.",
+      "forbidden": "Access denied (403). Check user role.",
+      "not_supported": "Redfish endpoints not found on this CIMC/firmware.",
+      "ssl_error": "TLS/SSL failed. Try lowering TLS minimum or disable certificate verification.",
+      "timeout": "Timed out connecting to CIMC.",
+      "cannot_connect": "Failed to connect to CIMC.",
+      "unknown": "Unexpected error. See logs for details."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "domain": "cimc_redfish",
+  "name": "Cisco CIMC Redfish (Fans)",
+  "version": "0.1.0",
+  "iot_class": "local_polling",
+  "config_flow": true,
+  "requirements": [],
+  "codeowners": ["@trasbd"]
+}
