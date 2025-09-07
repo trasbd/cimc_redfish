@@ -1,3 +1,10 @@
+"""Temperature sensor entities for Cisco CIMC Redfish.
+
+Defines entities that expose chassis, CPU, DIMM, and PSU temperature
+readings reported by the CIMC Redfish Thermal endpoint, along with
+thresholds and health status.
+"""
+
 from __future__ import annotations
 
 from typing import Any
@@ -12,7 +19,9 @@ from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from ..const import DOMAIN  # noqa: TID252
-from ..helpers import normalize_name  # pyright: ignore[reportMissingImports]
+from ..helpers import (  # pyright: ignore[reportMissingImports] # noqa: TID252
+    normalize_name,  # pyright: ignore[reportMissingImports]
+)
 
 
 class CimcTemperatureSensor(CoordinatorEntity, SensorEntity):
@@ -25,6 +34,7 @@ class CimcTemperatureSensor(CoordinatorEntity, SensorEntity):
     def __init__(
         self, coordinator, entry_id: str, device: dict[str, Any], temp: dict[str, Any]
     ) -> None:
+        """Expose the last reported temperatures as a sensor entity."""
         super().__init__(coordinator)
         self._entry_id = entry_id
         self._host = device.get("host")
@@ -38,6 +48,8 @@ class CimcTemperatureSensor(CoordinatorEntity, SensorEntity):
 
     @property
     def device_info(self) -> DeviceInfo:
+        """Return device registry information to group this entity."""
+
         ident = (DOMAIN, self._device.get("ident") or self._host)
         return DeviceInfo(
             identifiers={ident},
@@ -49,6 +61,7 @@ class CimcTemperatureSensor(CoordinatorEntity, SensorEntity):
 
     @property
     def native_value(self) -> int | float | None:
+        """Return the most recent temperature in celsius, if available."""
         for t in self.coordinator.data.get("temperatures", []) or []:
             tid = str(t.get("member_id") or t.get("name"))
             if tid == self._temp_id:
@@ -57,6 +70,7 @@ class CimcTemperatureSensor(CoordinatorEntity, SensorEntity):
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
+        """Includes all other data as attributes."""
         for t in self.coordinator.data.get("temperatures", []) or []:
             tid = str(t.get("member_id") or t.get("name"))
             if tid == self._temp_id:

@@ -1,3 +1,10 @@
+"""Fan sensor entities for Cisco CIMC Redfish.
+
+Defines `CimcFanSensor`, which exposes individual fan tachometer readings
+(RPM) and associated thresholds/health information from the CIMC Redfish
+Thermal endpoint.
+"""
+
 from __future__ import annotations
 
 from typing import Any
@@ -7,8 +14,10 @@ from homeassistant.const import REVOLUTIONS_PER_MINUTE
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from ..const import DOMAIN
-from ..helpers import normalize_name  # pyright: ignore[reportMissingImports]
+from ..const import DOMAIN  # noqa: TID252
+from ..helpers import (  # noqa: TID252 # pyright: ignore[reportMissingImports]
+    normalize_name,  # pyright: ignore[reportMissingImports]
+)
 
 
 class CimcFanSensor(CoordinatorEntity, SensorEntity):

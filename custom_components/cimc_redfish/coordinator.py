@@ -229,6 +229,18 @@ class CimcRedfishClient:
         return {"power": power, "psus": psus, "voltages": rails}
 
     def fetch_all(self) -> dict[str, Any]:
+        """Fetch a combined snapshot of CIMC telemetry.
+
+        Always includes fan data, and attempts to merge in power and
+        temperature data if those endpoints are available. Individual
+        sections are silently skipped if they raise errors.
+
+        Returns:
+            dict[str, Any]: Dictionary containing one or more of:
+                - "fans": list of fan telemetry
+                - "power": power/PSU metrics
+                - "temperatures": list of temperature sensors
+        """
         out = self.fetch_fans()
         with suppress(Exception):
             out.update(self.fetch_power())

@@ -1,12 +1,27 @@
-from __future__ import annotations
-from typing import Any
-from homeassistant.components.sensor import SensorEntity, SensorDeviceClass, SensorStateClass
-from homeassistant.const import UnitOfElectricPotential, UnitOfPower
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.helpers.entity import DeviceInfo
+"""Power supply sensor entities for Cisco CIMC Redfish.
 
-from ..const import DOMAIN
-from ..helpers import normalize_name  # pyright: ignore[reportMissingImports]
+Provides entities that represent PSU telemetry, including output voltage
+and last reported power usage, with additional state attributes stitched
+from the Redfish Power and Voltages resources.
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from homeassistant.components.sensor import (
+    SensorDeviceClass,
+    SensorEntity,
+    SensorStateClass,
+)
+from homeassistant.const import UnitOfElectricPotential, UnitOfPower
+from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
+
+from ..const import DOMAIN  # noqa: TID252
+from ..helpers import (  # noqa: TID252 # pyright: ignore[reportMissingImports]
+    normalize_name,  # pyright: ignore[reportMissingImports]
+)
 
 
 def _psu_base(device: dict[str, Any], psu: dict[str, Any]) -> tuple[str, str, str]:
@@ -37,12 +52,14 @@ class _CimcPsuBase(CoordinatorEntity, SensorEntity):
 
 
 class CimcPsuVoltageSensor(_CimcPsuBase):
+    """Expose the PSU DC output voltage as a sensor entity."""
     _attr_device_class = SensorDeviceClass.VOLTAGE
     _attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
     _attr_state_class = SensorStateClass.MEASUREMENT
     _attr_has_entity_name = True
 
     def __init__(self, coordinator, entry_id: str, device: dict[str, Any], psu: dict[str, Any]) -> None:
+        """Initialize the voltage sensor from the PSU descriptor."""
         super().__init__(coordinator, device)
         self._id = str(psu.get("member_id") or psu.get("name"))
         host, name, uid = _psu_base(device, psu)
@@ -52,6 +69,7 @@ class CimcPsuVoltageSensor(_CimcPsuBase):
 
     @property
     def native_value(self):
+        """Return the current PSU output voltage (V), if available."""
         for p in self.coordinator.data.get("psus", []) or []:
             if str(p.get("member_id") or p.get("name")) == self._id:
                 return p.get("voltage")
@@ -59,7 +77,7 @@ class CimcPsuVoltageSensor(_CimcPsuBase):
 
     @property
     def extra_state_attributes(self):
-        # Stitch attributes from PSU row + the matched rail thresholds
+        """Return stitched attributes from PSU and matching rail thresholds."""
         for p in self.coordinator.data.get("psus", []) or []:
             if str(p.get("member_id") or p.get("name")) == self._id:
                 # Find the matched rail record by odata_id, if present
@@ -93,12 +111,14 @@ class CimcPsuVoltageSensor(_CimcPsuBase):
 
 
 class CimcPsuPowerSensor(_CimcPsuBase):
+    """Expose the PSU last reported power output as a sensor entity."""
     _attr_device_class = SensorDeviceClass.POWER
     _attr_native_unit_of_measurement = UnitOfPower.WATT
     _attr_state_class = SensorStateClass.MEASUREMENT
     _attr_has_entity_name = True
 
     def __init__(self, coordinator, entry_id: str, device: dict[str, Any], psu: dict[str, Any]) -> None:
+        """Initialize the power sensor from the PSU descriptor."""
         super().__init__(coordinator, device)
         self._id = str(psu.get("member_id") or psu.get("name"))
         host, name, uid = _psu_base(device, psu)
@@ -108,6 +128,7 @@ class CimcPsuPowerSensor(_CimcPsuBase):
 
     @property
     def native_value(self):
+        """Return the most recent power draw in watts, if available."""
         for p in self.coordinator.data.get("psus", []) or []:
             if str(p.get("member_id") or p.get("name")) == self._id:
                 # From PowerSupplies[].LastPowerOutputWatts
