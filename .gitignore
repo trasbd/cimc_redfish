@@ -6,6 +6,8 @@
 !/custom_components/cimc_redfish/
 !/custom_components/cimc_redfish/**
 
+!/sample/
+
 # Still ignore pycaches and pyc files inside it
 /custom_components/cimc_redfish/**/__pycache__/
 /custom_components/cimc_redfish/**/*.pyc

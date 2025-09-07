@@ -1,0 +1,471 @@
+{
+    "Id": "Power",
+    "Name": "Power",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity/Power",
+    "PowerControl": {
+        "PowerConsumedWatts": "80",
+        "PowerMetric": {
+            "IntervalInMin": 0.0833,
+            "MinConsumedWatts": "82",
+            "AverageConsumedWatts": "91",
+            "MaxConsumedWatts": "164"
+        }
+    },
+    "Voltages": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PSU1_VOUT",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 41,
+            "Name": "PSU1_VOUT",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 1,
+            "LowerThresholdCritical": "N/A",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "14.000",
+            "ReadingVolts": "11.900"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PSU2_VOUT",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 47,
+            "Name": "PSU2_VOUT",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 2,
+            "LowerThresholdCritical": "N/A",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "14.000",
+            "ReadingVolts": "0.000"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P12V_STBY_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 180,
+            "Name": "P12V_STBY_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 3,
+            "LowerThresholdCritical": "10.788",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "13.166",
+            "ReadingVolts": "12.006"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P12V_AUX_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 181,
+            "Name": "P12V_AUX_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 4,
+            "LowerThresholdCritical": "10.797",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "13.157",
+            "ReadingVolts": "11.918"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P3V_BAT_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 182,
+            "Name": "P3V_BAT_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 5,
+            "LowerThresholdCritical": "2.543",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "3.588",
+            "ReadingVolts": "2.948"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P3V3_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 183,
+            "Name": "P3V3_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 6,
+            "LowerThresholdCritical": "3.014",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "3.580",
+            "ReadingVolts": "3.313"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V8_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 184,
+            "Name": "P1V8_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 7,
+            "LowerThresholdCritical": "1.677",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.911",
+            "ReadingVolts": "1.794"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V5_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 185,
+            "Name": "P1V5_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 8,
+            "LowerThresholdCritical": "1.404",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.599",
+            "ReadingVolts": "1.498"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V0_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 186,
+            "Name": "P1V0_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 9,
+            "LowerThresholdCritical": "0.936",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.069",
+            "ReadingVolts": "0.998"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V2_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 187,
+            "Name": "P1V2_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 10,
+            "LowerThresholdCritical": "1.123",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.279",
+            "ReadingVolts": "1.193"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P0V75_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 188,
+            "Name": "P0V75_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 11,
+            "LowerThresholdCritical": "0.687",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "0.814",
+            "ReadingVolts": "0.751"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P5V_AUX",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 189,
+            "Name": "P5V_AUX",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 12,
+            "LowerThresholdCritical": "4.555",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "5.428",
+            "ReadingVolts": "5.027"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V05_STBY_PCH",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 190,
+            "Name": "P1V05_STBY_PCH",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 13,
+            "LowerThresholdCritical": "0.983",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.115",
+            "ReadingVolts": "1.045"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P12V_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 191,
+            "Name": "P12V_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 14,
+            "LowerThresholdCritical": "10.797",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "13.157",
+            "ReadingVolts": "11.918"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P5V_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 192,
+            "Name": "P5V_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 15,
+            "LowerThresholdCritical": "4.536",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "5.452",
+            "ReadingVolts": "5.006"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P3V3_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 193,
+            "Name": "P3V3_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 16,
+            "LowerThresholdCritical": "3.008",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "3.584",
+            "ReadingVolts": "3.376"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V5_PCH_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 194,
+            "Name": "P1V5_PCH_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 17,
+            "LowerThresholdCritical": "1.373",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.622",
+            "ReadingVolts": "1.490"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/P1V05_PCH_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 195,
+            "Name": "P1V05_PCH_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 18,
+            "LowerThresholdCritical": "0.991",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.100",
+            "ReadingVolts": "1.045"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVCCIN_P1_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 196,
+            "Name": "PVCCIN_P1_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 19,
+            "LowerThresholdCritical": "1.401",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.952",
+            "ReadingVolts": "1.879"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVCCIO_V_MOIN",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 198,
+            "Name": "PVCCIO_V_MOIN",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 20,
+            "LowerThresholdCritical": "0.983",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.115",
+            "ReadingVolts": "1.045"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVDDQ_AB",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 199,
+            "Name": "PVDDQ_AB",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 21,
+            "LowerThresholdCritical": "1.112",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.287",
+            "ReadingVolts": "1.193"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVDDQ_CD",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 200,
+            "Name": "PVDDQ_CD",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 22,
+            "LowerThresholdCritical": "1.112",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "1.287",
+            "ReadingVolts": "1.193"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVTT_DDR_AB",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 203,
+            "Name": "PVTT_DDR_AB",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 23,
+            "LowerThresholdCritical": "0.561",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "0.640",
+            "ReadingVolts": "0.600"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVTT_DDR_CD",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 204,
+            "Name": "PVTT_DDR_CD",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 24,
+            "LowerThresholdCritical": "0.561",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "0.640",
+            "ReadingVolts": "0.608"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVPP_AB",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 207,
+            "Name": "PVPP_AB",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 25,
+            "LowerThresholdCritical": "2.431",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "2.797",
+            "ReadingVolts": "2.620"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/Voltages/PVPP_CD",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "SensorNumber": 208,
+            "Name": "PVPP_CD",
+            "UpperThresholdNonCritical": "N/A",
+            "MemberID": 26,
+            "LowerThresholdCritical": "2.431",
+            "PhysicalContext": "PowerSupply",
+            "LowerThresholdNonCritical": "N/A",
+            "UpperThresholdCritical": "2.797",
+            "ReadingVolts": "2.620"
+        }
+    ],
+    "@odata.type": "#Cisco_Power",
+    "Description": "Power",
+    "@odata.id": "/redfish/v1/Chassis/1/Power",
+    "PowerSupplies": [
+        {
+            "SerialNumber": "LIT214025JX",
+            "FirmwareVersion": "10052021",
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/PowerSupplies/PSU1",
+            "Status": {
+                "state": "Enabled"
+            },
+            "LineInputVoltage": "121",
+            "Name": "PSU1",
+            "MemberID": 1,
+            "LastPowerOutputWatts": "74",
+            "SparePartNumber": "341-0591-03",
+            "PartNumber": "341-0591-03",
+            "PowerSupplyType": "AC",
+            "Model": "PS-2771-1S-LF",
+            "LineInputVoltageType": "AC"
+        },
+        {
+            "SerialNumber": "ART2139FFF5",
+            "FirmwareVersion": "12002215",
+            "@odata.id": "/redfish/v1/Chassis/1/Power#/PowerSupplies/PSU2",
+            "Status": {
+                "state": "Disabled"
+            },
+            "LineInputVoltage": "0",
+            "Name": "PSU2",
+            "MemberID": 2,
+            "LastPowerOutputWatts": "0",
+            "SparePartNumber": "341-0591-03",
+            "PartNumber": "341-0591-03",
+            "PowerSupplyType": "AC",
+            "Model": "700-014160-0000",
+            "LineInputVoltageType": "AC"
+        }
+    ]
+}
