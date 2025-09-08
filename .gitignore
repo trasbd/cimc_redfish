@@ -14,4 +14,5 @@
 
 # (Optional) Keep these files
 !/README.md
+!/LICENSE
 !/.gitignore
